@@ -4,3 +4,4 @@ src/logica/__pycache__/*
 src/vista/__pycache__/*
 venv/*
 tests/__pycache__/*
+aplicacion.sqlite
