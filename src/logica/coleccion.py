@@ -11,6 +11,7 @@ class Coleccion():
 
     def agregar_album(self, titulo, anio, descripcion, medio):
         busqueda = session.query(Album).filter(Album.titulo == titulo).all()
+        print("prueba")
         if len(busqueda) == 0:
             album = Album(titulo=titulo, ano=anio, descripcion=descripcion, medio=medio)
             session.add(album)
