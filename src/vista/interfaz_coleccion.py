@@ -43,7 +43,7 @@ class App(QApplication):
         '''
         self.ventana_album.show()
         self.ventana_album.mostrar_album(self.logica.dar_album_por_id(indice_album))
-        self.ventana_album.mostrar_canciones(self.logica.dar_canciones_de_album(indice_album))
+        self.ventana_album.mostrar_canciones(self.logica.dar_canciones_de_album())
 
     def mostrar_ventana_lista_canciones(self):
         '''
@@ -237,7 +237,7 @@ class App(QApplication):
         '''
         self.logica.asociar_cancion(id_cancion, id_album)
         self.ventana_album.mostrar_album(self.logica.dar_album_por_id(id_album))
-        self.ventana_album.mostrar_canciones(self.logica.dar_canciones_de_album(id_album))
+        self.ventana_album.mostrar_canciones(self.logica.dar_canciones_de_album())
 
     def dar_canciones(self):
         '''
