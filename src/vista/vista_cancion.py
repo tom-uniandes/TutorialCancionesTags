@@ -13,6 +13,7 @@ class Ventana_Cancion(QWidget):
         '''
         super().__init__()
         self.interfaz = interfaz
+        self.error_guardar_cancion = "Error al guardar canción"
         #Se establecen las características de la ventana
         self.title = 'Mi música - canción'
         self.left = 80
@@ -189,7 +190,7 @@ class Ventana_Cancion(QWidget):
         if len(self.interpretes) == 0:
             mensaje_error = QMessageBox()
             mensaje_error.setIcon(QMessageBox.Critical)
-            mensaje_error.setWindowTitle("Error al guardar canción")
+            mensaje_error.setWindowTitle(self.error_guardar_cancion)
             mensaje_error.setText("La canción debe tener al menos un intérprete")
             mensaje_error.setStandardButtons(QMessageBox.Ok)
             mensaje_error.exec_()
@@ -210,14 +211,14 @@ class Ventana_Cancion(QWidget):
                 if self.cancion_actual["titulo"] == "" or self.cancion_actual["minutos"] == "" or self.cancion_actual["segundos"] == "":
                     mensaje_error = QMessageBox()
                     mensaje_error.setIcon(QMessageBox.Critical)
-                    mensaje_error.setWindowTitle("Error al guardar canción")
+                    mensaje_error.setWindowTitle(self.error_guardar_cancion)
                     mensaje_error.setText("Ningún campo debe estar vacio")
                     mensaje_error.setStandardButtons(QMessageBox.Ok)
                     mensaje_error.exec_()
                 elif int(self.cancion_actual["minutos"]) == 0 and int(self.cancion_actual["segundos"]) < 10:
                     mensaje_error = QMessageBox()
                     mensaje_error.setIcon(QMessageBox.Critical)
-                    mensaje_error.setWindowTitle("Error al guardar canción")
+                    mensaje_error.setWindowTitle(self.error_guardar_cancion)
                     mensaje_error.setText("La duración de la canción debe ser mínimo de 10 sg")
                     mensaje_error.setStandardButtons(QMessageBox.Ok)
                     mensaje_error.exec_()
