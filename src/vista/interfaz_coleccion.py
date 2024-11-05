@@ -18,6 +18,7 @@ class App(QApplication):
         super(App, self).__init__(sys_argv)
         self.error_buscar_album = "Error al buscar álbum"
         self.error_guardar_cancion = "Error al guardar canción"
+        
         # Lógica de la aplicación
         self.logica = logica
 
