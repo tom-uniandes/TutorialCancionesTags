@@ -1824,7 +1824,7 @@ Licensed under the MIT license.
                         // only proceed if the tick interval rounded
                         // with an extra decimal doesn't give us a
                         // zero at end
-                        if (!(ts.length > 1 && /\..*0$/.test((ts[1] - ts[0]).toFixed(extraDec))))
+                        if (!(ts.length > 1 && diff.includes('.') && !diff.endsWith('0')))
                             axis.tickDecimals = extraDec;
                     }
                 }
